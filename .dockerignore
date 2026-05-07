@@ -1,0 +1,22 @@
+# Keep the build context small and reproducible.
+node_modules
+.next
+backend/.venv
+backend/__pycache__
+**/__pycache__
+data/uploads/*
+!data/uploads/.gitkeep
+data/nyayaflow.db
+data/nyayaflow.db-shm
+data/nyayaflow.db-wal
+.git
+.gitignore
+.github
+.idea
+.vscode
+.claude
+.DS_Store
+*.log
+README.md
+backend/README.md
+docker-compose.yml

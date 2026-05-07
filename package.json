@@ -1,0 +1,38 @@
+{
+  "name": "nyayaflow-ai",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "seed": "tsx scripts/seed.ts",
+    "db:migrate": "tsx scripts/migrate-pg.ts",
+    "py:install": "python3 -m venv backend/.venv && PYO3_USE_ABI3_FORWARD_COMPATIBILITY=1 backend/.venv/bin/pip install -r backend/requirements.txt",
+    "py:dev": "backend/.venv/bin/python -m uvicorn backend.main:app --reload --port 8000",
+    "start:prod": "bash start.sh",
+    "render:build": "npm install && npm run build && python3 -m pip install --user --break-system-packages --no-cache-dir -r backend/requirements.txt"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.5.0",
+    "clsx": "^2.1.1",
+    "next": "14.2.18",
+    "pdf-parse": "^1.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^2.5.4"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/node": "^22.9.0",
+    "@types/pdf-parse": "^1.1.4",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}

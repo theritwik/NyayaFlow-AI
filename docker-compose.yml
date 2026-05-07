@@ -1,0 +1,31 @@
+# Postgres for NyayaFlow AI.
+#
+#   docker compose up -d
+#   export DATABASE_URL="postgres://nyaya:nyaya@localhost:5432/nyayaflow"
+#   npm run db:migrate   # one-time, applies db/schema.sql
+#   npm run dev
+#
+# Stop with `docker compose down` (data persists in the named volume).
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: nyayaflow-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: nyaya
+      POSTGRES_PASSWORD: nyaya
+      POSTGRES_DB: nyayaflow
+    ports:
+      - "5432:5432"
+    volumes:
+      - nyaya-pg:/var/lib/postgresql/data
+      - ./db/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nyaya -d nyayaflow"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  nyaya-pg:

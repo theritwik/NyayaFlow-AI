@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gov-navy: #0b2545;
+  --gov-deep: #13315c;
+  --gov-slate: #3a506b;
+  --gov-ivory: #f7f7f2;
+  --gov-gold: #b08c2e;
+  --gov-stamp: #7a1e1e;
+}
+
+html,
+body {
+  background: #f4f5f7;
+  color: var(--gov-navy);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+@layer components {
+  .gov-card {
+    @apply bg-white rounded-md border border-slate-200 shadow-sm;
+  }
+  .gov-card-header {
+    @apply border-b border-slate-200 px-5 py-3 bg-slate-50/60 rounded-t-md;
+  }
+  .gov-section-title {
+    @apply text-[11px] uppercase tracking-[0.16em] text-gov-slate font-semibold;
+  }
+  .gov-h1 {
+    @apply text-[26px] font-serif text-gov-navy;
+  }
+  .gov-h2 {
+    @apply text-[18px] font-semibold text-gov-deep;
+  }
+  .gov-btn {
+    @apply inline-flex items-center justify-center gap-2 px-3 py-1.5 rounded-sm text-sm font-medium transition border;
+  }
+  .gov-btn-primary {
+    @apply gov-btn bg-gov-navy text-white border-gov-navy hover:bg-gov-deep;
+  }
+  .gov-btn-ghost {
+    @apply gov-btn bg-white text-gov-navy border-slate-300 hover:bg-slate-50;
+  }
+  .gov-btn-danger {
+    @apply gov-btn bg-white text-red-700 border-red-300 hover:bg-red-50;
+  }
+  .gov-btn-success {
+    @apply gov-btn bg-emerald-700 text-white border-emerald-700 hover:bg-emerald-800;
+  }
+  .gov-input {
+    @apply w-full px-3 py-2 border border-slate-300 rounded-sm text-sm focus:outline-none focus:ring-1 focus:ring-gov-navy focus:border-gov-navy bg-white;
+  }
+  .gov-table {
+    @apply w-full text-sm border-collapse;
+  }
+  .gov-table th {
+    @apply text-left px-3 py-2 text-[11px] uppercase tracking-wider text-gov-slate font-semibold bg-slate-50 border-b border-slate-200;
+  }
+  .gov-table td {
+    @apply px-3 py-3 border-b border-slate-100 align-top;
+  }
+  .gov-stat {
+    @apply gov-card p-4 flex flex-col gap-1;
+  }
+  .gov-stat-label {
+    @apply text-[11px] uppercase tracking-wider text-gov-slate font-semibold;
+  }
+  .gov-stat-value {
+    @apply text-3xl font-serif text-gov-navy;
+  }
+}
+
+.gov-stamp {
+  display: inline-block;
+  border: 2px solid var(--gov-stamp);
+  color: var(--gov-stamp);
+  padding: 2px 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 11px;
+  transform: rotate(-2deg);
+}
+
+.gov-divider {
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--gov-navy) 0,
+    var(--gov-navy) 25%,
+    var(--gov-gold) 25%,
+    var(--gov-gold) 50%,
+    var(--gov-navy) 50%,
+    var(--gov-navy) 100%
+  );
+}

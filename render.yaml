@@ -1,0 +1,22 @@
+# Render auto-detects this file on each deploy.
+# https://render.com/docs/blueprint-spec
+#
+# Single web service that runs Next.js + FastAPI in one container via Dockerfile.
+# Free tier compatible.
+
+services:
+  - type: web
+    name: nyayaflow-ai
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    region: oregon
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NYAYAFLOW_PY_URL
+        value: http://127.0.0.1:8000
+      - key: NODE_ENV
+        value: production
+      - key: NYAYAFLOW_AUTOSEED
+        value: "true"
