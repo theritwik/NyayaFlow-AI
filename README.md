@@ -15,7 +15,6 @@ A decision-support platform that helps government departments turn long court-ju
 [![PyMuPDF](https://img.shields.io/badge/PyMuPDF-1.27-2C3E50)](https://pymupdf.readthedocs.io/)
 [![Tesseract](https://img.shields.io/badge/Tesseract-5.5-4285F4)](https://tesseract-ocr.github.io/)
 [![Postgres](https://img.shields.io/badge/PostgreSQL-16-4169E1?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
-[![License](https://img.shields.io/badge/License-Prototype-orange)]()
 
 </div>
 
@@ -355,12 +354,6 @@ npm install --save-optional pg
 npm run db:migrate
 npm run dev
 ```
-
----
-
-## 📜 License
-
-Prototype, internal use. Add your organisation's license header before deployment.
 
 ---
 
